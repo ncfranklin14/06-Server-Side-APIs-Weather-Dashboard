@@ -5,7 +5,9 @@ var dateTextEl = $(".current-day");
 
 var tempEl = document.getElementById('currTemp');
 var userCity = document.getElementById('current-city');
-
+var day1temp = document.getElementById('ftrTemp1');
+var day1date = document.getElementById('ftrDate1');
+var img1 = document.getElementById('img1');
 
 srchBtn.on('click', function() {
 console.log(srchBtn);
@@ -18,14 +20,12 @@ fetch(requestURl)
     return response.json();
   })
   .then(function (data) {
-    // console.log(data);
-    // var userCityh2 = document.createElement("h2")
-    // userCityh2.textContent = data.local_names.name
-    // userCity.appendChild(userCityh2);
+    console.log(data);
+    userCity.textContent = data[0].name
 
 var lat = data[0].lat
 var lon = data[0].lon
-var requestURl2 = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&appid=50240b9879c23b5e1b29ef0ef1bc15dc"
+var requestURl2 = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&appid=50240b9879c23b5e1b29ef0ef1bc15dc&units=imperial"
 fetch(requestURl2)
 .then(function (response) {
   return response.json();
@@ -36,6 +36,10 @@ fetch(requestURl2)
     tempH3.textContent = data.current.temp
     tempEl.appendChild(tempH3);
     
+    day1temp.innerText = data.daily[1].temp.day
+    day1date.innerText = moment.unix(data.daily[1].dt).format('(MM/DD/YYYY)');
+    var imgUrl = "http://openweathermap.org/img/wn/" + data.daily[1].weather[0].icon +".png"
+    img1.setAttribute("src", imgUrl)
     
 });
 });
