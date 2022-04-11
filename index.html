@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather-Dashboard</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js">
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Weather Dashboard</h1>
+    </header>
+    <section class="container">
+        <div class="row">
+          <div class="col-4">
+              <h2>Search for City</h2>
+              <input type="text" id= "city-name"> </input>
+              <button id="srchBtn">Search</button>
+          </div>
+<!-- Current city  -->
+            <div class = "row justify-content-center">
+            <div class = "col-8">
+              <h2 id = "current-city"></h2>
+              <h2 class = "current-day"></h2>
+              <h3 id = "currTemp"><h/h3>
+              <h3 id = "currHum"></h3>
+              <h3 id = "currUV"></h3>
+            </div>
+          </div>
+        </section>
+<!-- Future Forecast -->
+<section class = "container"></section>
+          <h3>5-Day Forecast</h3>
+            <div class = "row justify-content-center">
+            <div class="col 12">
+                <h4 id = "ftrDate"></h4>
+                <h4 id = "ftrTemp"></h4>
+                <h4 id = "ftrWind"></h4>
+                <h4 id = "ftrHumidity"></h4>
+            </div>
+            <div class="col">
+                <h4 id = "ftrTemp"></h4>
+                <h4 id = "ftrWind"></h4>
+                <h4 id = "ftrHumidity"></h4>
+            </div>
+            <div class="col">
+                <h4 id = "ftrTemp"></h4>
+                <h4 id = "ftrWind"></h4>
+                <h4 id = "ftrHumidity"></h4>
+            </div>
+            <div class="col">
+                <h4 id = "ftrTemp"></h4>
+                <h4 id = "ftrWind"></h4>
+                <h4 id = "ftrHumidity"></h4>
+            </div>
+            <div class="col">
+                <h4 id = "ftrTemp"></h4>
+                <h4 id = "ftrWind"></h4>
+                <h4 id = "ftrHumidity"></h4>
+            </div>
+        </div>
+    </section>
+      </div>
+    
+    
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
