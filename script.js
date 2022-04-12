@@ -9,6 +9,10 @@ var userHum = document.getElementById('currHum');
 var userUv = document.getElementById('currUV');
 var day1temp = document.getElementById('ftrTemp1');
 var day1date = document.getElementById('ftrDate1');
+var day2date = document.getElementById('ftrDate2');
+var day3date = document.getElementById('ftrDate3');
+var day4date = document.getElementById('ftrDate4');
+var day5date = document.getElementById('ftrDate5');
 var day1wind = document.getElementById('ftrWind1');
 var day1humid = document.getElementById('ftrHumidity1');
 var img1 = document.getElementById('img1');
@@ -49,6 +53,10 @@ fetch(requestURl2)
 
     day1wind.innerText = data.daily[1].wind_speed
     day1humid.innerText = data.daily[1].humidity
+    day2date.innerText = moment.unix(data.daily[2].dt).format('(MM/DD/YYYY)');
+    day3date.innerText = moment.unix(data.daily[3].dt).format('(MM/DD/YYYY)');
+    day4date.innerText = moment.unix(data.daily[4].dt).format('(MM/DD/YYYY)');
+    day5date.innerText = moment.unix(data.daily[5].dt).format('(MM/DD/YYYY)');
     
 });
 });
