@@ -5,8 +5,12 @@ var dateTextEl = $(".current-day");
 
 var tempEl = document.getElementById('currTemp');
 var userCity = document.getElementById('current-city');
+var userHum = document.getElementById('currHum');
+var userUv = document.getElementById('currUV');
 var day1temp = document.getElementById('ftrTemp1');
 var day1date = document.getElementById('ftrDate1');
+var day1wind = document.getElementById('ftrWind1');
+var day1humid = document.getElementById('ftrHumidity1');
 var img1 = document.getElementById('img1');
 
 srchBtn.on('click', function() {
@@ -21,7 +25,7 @@ fetch(requestURl)
   })
   .then(function (data) {
     console.log(data);
-    userCity.textContent = data[0].name
+    userCity.innerText = data[0].name
 
 var lat = data[0].lat
 var lon = data[0].lon
@@ -35,11 +39,16 @@ fetch(requestURl2)
     var tempH3 = document.createElement("h3");
     tempH3.textContent = data.current.temp
     tempEl.appendChild(tempH3);
+    userHum.innerText = data.current.humidity;
+    userUv.innerText = data.current.uvi
     
     day1temp.innerText = data.daily[1].temp.day
     day1date.innerText = moment.unix(data.daily[1].dt).format('(MM/DD/YYYY)');
     var imgUrl = "http://openweathermap.org/img/wn/" + data.daily[1].weather[0].icon +".png"
     img1.setAttribute("src", imgUrl)
+
+    day1wind.innerText = data.daily[1].wind_speed
+    day1humid.innerText = data.daily[1].humidity
     
 });
 });
