@@ -36,7 +36,7 @@ var img5 = document.getElementById('img5');
 srchBtn.on('click', function() {
 console.log(srchBtn);
 var userInput = input.val()
-var requestURl = "http://api.openweathermap.org/geo/1.0/direct?q=" + userInput + " &appid=50240b9879c23b5e1b29ef0ef1bc15dc"
+var requestURl = "https://api.openweathermap.org/geo/1.0/direct?q=" + userInput + " &appid=50240b9879c23b5e1b29ef0ef1bc15dc"
 
 
 fetch(requestURl)
